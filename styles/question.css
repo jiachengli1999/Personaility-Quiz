@@ -1,0 +1,114 @@
+body{
+  margin:0;
+  padding:0;
+}
+#header{
+  background-color: #FEA116;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: table;
+}
+#name1{
+  position: relative;
+  text-align: center;
+  top: 50%;
+  Left:50%;
+  transform: translate(-50%, 500%);
+  font: Helvetica;
+  font-size: 50px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 200px;
+  height: 60px;
+}
+.question{
+  font-family: Helvetica;
+  font-size: 50px;
+  color: white;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 1000px;
+  height: 400px;
+  background-color: rgba(79, 78, 78, 0.3);
+  position: relative;
+  Left: 50%;
+  transform: translate(-50%, 70%);
+}
+
+.box{
+  height:100vh;
+  width:100%;
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+}
+#box1{
+  background-image: url("seasons.png");
+}
+#box2{
+  background-image: url("flower.png");
+}
+#box3{
+  background-image: url("mountain.png");
+}
+#box4{
+  background-image: url("civilization.png");
+}
+#box5{
+  background-image: url("portal.png");
+}
+.Q{ /* size of bubbles*/
+height: 20px;
+width: 50px;
+margin-right: 30px;
+}
+
+.button{
+  /* no background color- so transport*/
+  position: relative;
+  border: 1px solid black;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: black;
+  background-color: transparent;
+}
+
+.button:hover{
+  color: white;
+}
+
+
+#button{
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  font-size: 16px;
+  font-family: Helvetica;
+  margin: 2px;
+  transform:translate(650%, 50%);
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+#result_page{
+  background-color: #FEA116;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: table;
+}
+.results{
+  color: white;
+  font-size: 40px;
+  font-family: Helvetica;
+  text-align: left;
+  margin-left: 20px;
+}

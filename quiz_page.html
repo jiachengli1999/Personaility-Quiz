@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+  <head>
+    <div id="header">
+      <h1 id ="name1">Begin </h1>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="styles/question.css">
+  </head>
+  <body>
+
+      <div id="box1" class="box">
+        <div id="question1" class="question">
+          <p> Imagine A Season</p>
+          <input type="radio" name="Q1" class="Q"> Spring </input>
+          <input type="radio" name="Q1" class="Q"> Summer </input>
+          <input type="radio" name="Q1" class="Q"> Fall </input>
+          <input type="radio" name="Q1" class="Q"> Winter </input>
+        </div>
+      </div>
+      <div id="box2" class="box">
+        <div id="question2" class="question">
+          <p>Now imagine yourself in the middle of nowhere in the season you picked.
+            Look around you. Are you out in an open space, or are objects cluttered around you? </p> 
+          <input type="radio" name="Q2" class="Q"> Open Space </input>
+          <input type="radio" name="Q2" class="Q"> Objects are present </input>
+        </div>
+      </div>
+      <div id="box3" class="box">
+        <div id="question3" class="question">
+          <p> Look around you. Is it getting dark or is it still bright outside?</p>
+          <input type="radio" name="Q3" class="Q"> Getting Dark </input>
+          <input type="radio" name="Q3" class="Q"> Still Bright </input>
+        </div>
+      </div>
+      <div id="box4" class="box">
+        <div id="question4" class="question">
+          <p>You wander around until you see civilization? Was it an easy trip? </p>
+          <input type="radio" name="Q4" class="Q"> Yes </input>
+          <input type="radio" name="Q4" class="Q"> No </input>
+        </div>
+      </div>
+      <div id="box5" class="box">
+        <div id="question5" class="question">
+          <p>You see a portal that connects to a random season.
+          Do you choose to enter? </p>
+          <input type="radio" name="Q5" class="Q"> Yes </input>
+          <input type="radio" name="Q5" class="Q"> No </input>
+        </div>
+      </div>
+
+      <div id="result_page">
+        <input id="button" class="button" onclick="submit()" type="submit">
+
+        <div class="results">
+          <h1>Season</h1>
+          <div id="Q1_result1"></div> </br>
+          <div id="Q1_result2"></div> </br>
+          <div id="Q1_result3"></div> </br>
+          <div id="Q1_result4"></div> </br>
+
+          <h1>Open Space or Cluttered Space</h1>
+          <div id="Q2_result1"></div> </br>
+          <div id="Q2_result2"></div> </br>
+          <div id="Q2_result3"></div> </br>
+          <div id="Q2_result4"></div> </br>
+
+          <h1>Dark or Bright</h1>
+          <div id="Q3_result1"></div> </br>
+          <div id="Q3_result2"></div> </br>
+          <div id="Q3_result3"></div> </br>
+          <div id="Q3_result4"></div> </br>
+
+          <h1>Easy Trip</h1>
+          <div id="Q4_result1"></div> </br>
+          <div id="Q4_result2"></div> </br>
+          <div id="Q4_result3"></div> </br>
+          <div id="Q4_result4"></div> </br>
+
+          <h1>Portal</h1>
+          <div id="Q5_result1"></div> </br>
+          <div id="Q5_result2"></div> </br>
+          <div id="Q5_result3"></div> </br>
+          <div id="Q5_result4"></div> </br>
+        </div>
+      </div>
+
+      <script>
+        //get answers
+        var radios = document.getElementsByClassName('Q');
+        var numOfQuestions = document.getElementsByClassName('question').length;
+        var radioCount =0;
+
+        function getNumOfAnswered(){
+          var answered =0;
+          for(var i=0; i < radios.length; ++i){
+            if (radios[i].checked){
+              answered++;
+            }
+          }
+          return answered;
+        }
+
+        function answerScore(qName){
+          var radioAmt = document.getElementsByName(qName); //get num of radios in a question
+          for(var i=0; i < radioAmt.length; i++){
+            if (radioAmt[i].checked){
+              return i+1; //return question number
+            }
+          }
+          return null;
+        }
+
+        function submit(){
+          radioCount = getNumOfAnswered(); //update num of answered once submitted
+          if (radioCount == numOfQuestions){
+            var index=1;
+            while(index < 6){
+              var i = answerScore("Q"+index);
+              if (i){ //only send message if button is checked
+                document.getElementById("Q" + index + "_result" + i).innerHTML = response(index, i);
+              }
+              index++;
+            }
+          }
+
+          function response(index, i){
+            if (index == 1){
+              if(i==1){
+                  return "Spring is often associated with renewal after the harsh winter. You often \
+                  return back refreshed after a long break";
+              }
+              else if(i==2){
+                  return "You are an active person who can't stay in one place for too long. You are an upbeat person \
+                  and an extrovert in the heart."
+              }
+              else if(i==3){
+                  return "You have constant desire for change. You often reflect on what you have done over the year and aspire to change."
+              }
+              else if(i==4){
+                  return "You tend to be an introvert, and like to stay comfortable at a single place."
+              }
+            }
+            else if (index==2){
+              if(i==1){
+                return "Seeing yourself in an open field indicates that you are able to express yourself easily \
+                to others. You are not that hesitant in expressing your ideas as well as your achievements."
+              }
+              else if(i==2){
+                return "If your field was covered in many cluttered areas then you may be hesistant in expressing \
+                yourself to others. If the objects are small in height, you are a little hesistant in expressing yourself \
+                to strangers. The taller the objects are, the more you are closed personality."
+              }
+            }
+            else if (index==3){
+              if(i==1){
+                  return "The season you chose represents your childhood. The sky turning dark suggests that you often had \
+                  an unexciting childhood around this time of the season."
+              }
+              else if(i==2){
+                  return "The season you chose represents your childhood. Since, the sky was still bright, it suggests that \
+                  you often had an exciting event in your childhood during this time of the season"
+              }
+            }
+            else if (index==4){
+              if(i==1){
+                  return "If the trip was easy for you, then had a fun time during your teenage years. Although there are some \
+                  stressful times, you weren't consumed by traumatizing events."
+              }
+              else if(i==2){
+                  return "Your teenage life was often filled with stress with some fun in between. You may have been \
+                  traumatized or have been under peer pressure all this time. However, you come out as a stronger person."
+              }
+            }
+            else{
+              if(i==1){
+                  return "Your decision to choose another season indicates that you want to experience something new \
+                  and you are filled with ambition. However, if you chose winter, it could mean that you \
+                  want to take a break and refresh yourself."
+              }
+              else{
+                  return "Your decision to stay in the same season indicates that you are content with your current \
+                  lifestyle. You feel that you are in a stable position or have someone who you can rely on."
+              }
+            }
+          }
+        }
+
+        var button = document.getElementById('button')
+        button.addEventListener('click',hide);
+
+        function hide() {
+          if (radioCount != numOfQuestions){
+            alert("Please answer all questions!");
+          }
+          else{
+            this.style.display = 'none';
+          }
+        }
+      </script>
+  </body>
+
+
+</html>

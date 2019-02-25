@@ -1,0 +1,113 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #FEA116;
+} /* so image will fit page exactly*/
+
+.title{
+  font-family: Helvetica;
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  transform: translate(0%, 100%);
+
+}
+
+#submit_button{
+  font-size: 16px;
+  font-family: Helvetica;
+  margin: 2px;
+  text-align: center;
+  transform: translate(0%, 1300%);
+}
+
+.button{
+  /* no background color- so transport*/
+  border: 1px solid black;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none; /*gets rid of underline in <a> */
+  transition: 0.5s ease;
+}
+.button:hover{
+  color: black;
+  background-color: white; /*box color*/
+}
+
+#paragraphs{
+  text-align: center;
+  font-family: Helvetica;
+  color: black;
+  transform: translate(0%, -10%);
+
+}
+#para1{
+  font-size: 50px;
+}
+#para2{
+  font-size: 30px;
+}
+
+@keyframes animate{
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+/* circle */
+ul{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  Left:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* border: 10px dashed white; */
+  border-top: 10px solid #DBD3D3;
+  border-left: 10px solid #E9C2C2;
+  border-right: 10px hidden #E9C2C2;
+  border-bottom: 10px hidden #F7ECEC;
+  border-width: 40px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5); /* black with opacity 0.5 */
+  overflow: hidden; /* hides overflowed colors from Li*/
+}
+li{ /*remove bullets*/
+  position: absolute;
+  List-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+ul.circle1{
+  width: 200px;
+  height: 200px;
+  animation: animateTurn1 linear 6s infinite;
+  /* opacity: 0.5; */
+}
+ul.circle2{
+  width: 1000px;
+  height: 1000px;
+  animation: animateTurn2 linear 9s infinite;
+  /* opacity: 0.5; */
+}
+@keyframes animateTurn1{
+  0%{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes animateTurn2{
+  0%{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}

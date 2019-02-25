@@ -12,5 +12,5 @@ page as well as the backgrounds, and JavaScript was used to give an answer back 
 
 ## Acknowledgements 
 *Inspired by the popular japanese cube personaility test
-*Followed "Online Tutorials" to understand how to make a rotating wheel for the landing page. I modified it a bit to look a little bit different. 
+*Followed "Online Tutorials" to understand how to make a rotating wheel for the landing page. I modified it a bit to look a little bit different. </br>
 Link: https://www.youtube.com/watch?v=tCLsNyzO51M

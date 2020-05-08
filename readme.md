@@ -5,7 +5,7 @@ tackle all your characteristics. This project was made using HTML, CSS, and some
 page as well as the backgrounds, and JavaScript was used to give an answer back for the option the user chose. 
 
 ## Getting started
-1) Download the zip and extract all the files and folders
+1) Clone Repository 
 2) Open login page.html to get to the landing page
 3) From there press begin to start the quiz
 4) Have fun =)
